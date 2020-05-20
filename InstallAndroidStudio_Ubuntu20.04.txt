@@ -1,0 +1,32 @@
+Install Android Studio on Ubuntu 20.04
+
+1 - Make sure that Oracle JDK is install: check it by executing the command # java -version . Thed second line of the result should be something like "Java(TM) SE Runtime Environment..."
+
+2 - Set JAVA_HOME environment variable to the JDK installation folder. By default it is in "/usr/lib/jvm/jdk-<version>/". Edit /etc/profile file and add the following line at its end
+
+export JAVA_HOME=/usr/lib/jvm/jdk-<version>/
+
+3 - Download Android Studio. Following this link https://developer.android.com/studio/ , download the suitable version for Linux
+
+4 - Extract Android Studio archive file downloaded and note the location on the filesystem. For our case, we extracted in ~/AndroidStudio/ with the following commands :
+
+	$ mkdir AndroidStudio
+	$ mv <path_to_android_studio_archive> AndroidStudio/
+	$ cd AndroidStudio
+	$ tar -xzvf <android_studio_archive_filename>
+This will create a sub-folder "android-studio" in "AndroidStudio" folder
+
+5 - Launch AndroidStudio with following commands : 
+
+	$ cd android-studio/bin	
+	$ ./studio.sh
+For the first launching, make sure to have internet access for downloading componets to be used during setup.
+
+6 - Set ANDROID_HOME variable to the location where Android SDK has been installed during startup. By default, it is ~/Android/Sdk. In that case, add the following lines at the end of ~/.profile file
+Also modify default PATH environment variable in ~/.profile file by the same mean.
+
+export ANDROID_HOME=/home/nkenne/Android/Sdk/
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+Its sometimes needed to log out and log in the current user for the changes of this step and that of step 2 be effective
+
+
