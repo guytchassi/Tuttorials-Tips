@@ -1,0 +1,21 @@
+Install Contiki On UBUNTU
+Before starting, you should note that there is a mean to get InstantContiki which a VmWare virtual machine image directly ready to be used.
+You can get Instant contiki following this link : http://sourceforge.net/projects/contiki/files/Instant%20Contiki/
+
+The installation process on Ubuntu is as follows.
+
+1 - Install JDK for JAVA. Ensure that the $PATH variable is modified to point on the JDK BIN and that the $JAVA_HOME variable is set to the JDK install folder
+
+2 - Download  Contiki on this link https://github.com/contiki-os/contiki/releases
+
+3 - Unzip or untar the archive in your home folder and rename the folder created into 'contiki'.
+
+4 - Install the following packets :  binutils-msp430, gcc-msp430, msp430-libc, msp430mcu, mspdebug, gcc-arm-none-eabi, gdb-arm-none-eabi, ant, libncurses5-dev.
+
+	#apt-get install binutils-msp430 gcc-msp430 msp430-libc msp430mcu mspdebug gcc-arm-none-eabi gdb-arm-none-eabi ant libncurses5-dev
+For x64 CPU/OS, additionnaly install lib32ncurses5 paquet if errors occur related to 'serial-dump' executable while running/deploying projects.
+
+5 - Installation completed! Now try to run any example or try running COOJA simulator to check. HelloWorld example is the most simple example
+Running Cooja simulator with 
+	$ cd contiki/tools/cooja
+	$ ant run
